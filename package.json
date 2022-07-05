@@ -1,0 +1,167 @@
+{
+    "name": "resource-watchdog",
+    "displayName": "Resource Watchdog",
+    "description": "Displays current CPU stats, Memory, Battery stats, and more",
+    "version": "0.0.1",
+    "publisher": "alexkainzinger",
+    "author": {
+        "name": "Alexander Kainzinger",
+        "email": "alexander@kainzinger.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexkainzinger/resource-watchdog.git"
+    },
+    "bugs": {
+        "url": "https://github.com/alexkainzinger/resource-watchdog/issues"
+    },
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Resource Watchdog",
+            "properties": {
+                "resourceWatchdog.battery.show": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Toggles the display of battery percentage remaining if a device with a battery. If the device reports not having a battery, this setting will always be treated as false."
+                },
+                "resourceWatchdog.cpuFrequency.show": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Toggles the display of CPU frequency. For Windows, this displays the maximum clock speed."
+                },
+                "resourceWatchdog.cpuFrequency.unit": {
+                    "type": "string",
+                    "enum": [
+                        "GHz",
+                        "MHz",
+                        "KHz",
+                        "Hz"
+                    ],
+                    "default": "GHz"
+                },
+                "resourceWatchdog.cpuTemperature.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of CPU temperature. May not work without the lm-sensors module on Linux. May require running VS Code as admin on Windows. M1 Macs also report no temperature."
+                },
+                "resourceWatchdog.cpuTemperature.unit": {
+                    "type": "string",
+                    "enum": [
+                        "C",
+                        "F"
+                    ],
+                    "default": "C"
+                },
+                "resourceWatchdog.cpuUsage.show": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Toggles the display of CPU Usage."
+                },
+                "resourceWatchdog.disk.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of disk space information. (Only shown, if drivers are specified)"
+                },
+                "resourceWatchdog.disk.format": {
+                    "type": "string",
+                    "enum": [
+                        "PercentRemaining",
+                        "PercentUsed",
+                        "Remaining",
+                        "UsedOutOfTotal"
+                    ],
+                    "default": "PercentRemaining",
+                    "description": "Configures how the disk space is displayed (percentage remaining/used, absolute remaining, used out of total)."
+                },
+                "resourceWatchdog.disk.drives": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "default": [],
+                    "description": "Drives to show. For example, 'C:/' on Windows, and '/dev/sda1' on Linux. If no drives are specified, nothing will be shown."
+                },
+                "resourceWatchdog.memory.show": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Toggles the display of memory consumption."
+                },
+                "resourceWatchdog.memory.unit": {
+                    "type": "string",
+                    "enum": [
+                        "GB",
+                        "MB",
+                        "KB",
+                        "B"
+                    ],
+                    "default": "GB"
+                },
+                "resourceWatchdog.memory.dangerThreshold": {
+                    "type": "number",
+                    "default": "0.9",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "resourceWatchdog.color": {
+                    "type": "string",
+                    "default": "#FFFFFF",
+                    "description": "Color of the status bar text in hex code (for example, #FFFFFF is white). The color must be in the format #RRGGBB, using hex digits."
+                },
+                "resourceWatchdog.leftAlignment": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Toggles the alignment of the status bar."
+                },
+                "resourceWatchdog.precision": {
+                    "type": "number",
+                    "default": 2,
+                    "minimum": 0,
+                    "maximum": 4,
+                    "description": "Precision of reported values"
+                },
+                "resourceWatchdog.updateFrequencyMs": {
+                    "type": "number",
+                    "default": 2000,
+                    "minimum": 200,
+                    "description": "How long in ms between updates to resources."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile && yarn run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "16.x",
+        "@types/vscode": "^1.68.0",
+        "@typescript-eslint/eslint-plugin": "^5.30.0",
+        "@typescript-eslint/parser": "^5.30.0",
+        "@vscode/test-electron": "^2.1.5",
+        "eslint": "^8.18.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.0.0",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "systeminformation": "^5.11.22"
+    }
+}
