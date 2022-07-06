@@ -26,7 +26,7 @@ export class Memory extends AbstractResource {
       memoryUsed
     )}/${this.formatNumber(memoryTotal)} ${unit}`;
     if (isDanger) {
-      status += "\u26A0";
+      status += " \u26A0";
     }
 
     return status;

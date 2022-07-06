@@ -92,7 +92,7 @@
                     },
                     "uniqueItems": true,
                     "default": [],
-                    "description": "Drives to show. For example, 'C:/' on Windows, and '/dev/sda1' on Linux. If no drives are specified, nothing will be shown."
+                    "description": "Drives to show. For example, 'C:' on Windows, and '/dev/sda1' on Linux. If no drives are specified, nothing will be shown."
                 },
                 "resourceWatchdog.memory.show": {
                     "type": "boolean",

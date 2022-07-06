@@ -39,12 +39,13 @@ export class Disk extends AbstractResource {
         return `${fsSize.fs} ${this.formatNumber(fsSize.use)}% used`;
       case "Remaining":
         const remaining = this._convertBytesToLargestUnit(
-          fsSize.size - fsSize.use
+          fsSize.size - fsSize.used,
+          true
         );
         return `${fsSize.fs} ${remaining} remaining`;
       case "UsedOutOfTotal":
-        const used = this._convertBytesToLargestUnit(fsSize.use);
-        const total = this._convertBytesToLargestUnit(fsSize.size);
+        const used = this._convertBytesToLargestUnit(fsSize.used, true);
+        const total = this._convertBytesToLargestUnit(fsSize.size, true);
         return `${fsSize.fs} ${used}/${total} used`;
     }
   }

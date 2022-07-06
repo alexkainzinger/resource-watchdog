@@ -26,7 +26,7 @@ export class Swap extends AbstractResource {
       swapUsed
     )}/${this.formatNumber(swapTotal)} ${unit}`;
     if (isDanger) {
-      status += "\u26A0";
+      status += " \u26A0";
     }
 
     return status;
