@@ -79,7 +79,7 @@ export default class ResourceWatchdog {
 
       this._statusBarItem.text = updates
         .filter((update) => !!update)
-        .join("  ");
+        .join("   ");
     } catch (e) {
       console.error(e);
     } finally {
