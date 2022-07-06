@@ -16,12 +16,12 @@ export class Disk extends AbstractResource {
   protected async getDisplay(): Promise<string> {
     const fsSizes = await fsSize();
     const drives = this._getDrives();
-    const formattedDrives: string[] = [];
+    const formattedDrives = fsSizes
+      .filter((fsData) => drives.indexOf(fsData.fs) !== -1)
+      .map((fsData) => this._getFormattedDiskSpace(fsData));
 
-    for (let fsSize of fsSizes) {
-      if (drives.indexOf(fsSize.fs) !== -1) {
-        formattedDrives.push(this._getFormattedDiskSpace(fsSize));
-      }
+    if (formattedDrives.length === 0) {
+      return "disk(s) not found";
     }
     return `$(database) ${formattedDrives.join(", ")}`;
   }
