@@ -22,6 +22,11 @@
     "categories": [
         "Other"
     ],
+    "icon": "images/logo.png",
+    "galleryBanner": {
+        "color": "#542AE5",
+        "theme": "dark"
+    },
     "activationEvents": [
         "*"
     ],

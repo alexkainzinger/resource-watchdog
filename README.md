@@ -1,4 +1,20 @@
-# Resource Watchdog
+<div align="center">
+  <a href="https://github.com/alexkainzinger/resource-watchdog">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Resource Watchdog</h3>
+
+  <p align="center">
+  VSCode extension to displays current CPU stats, Memory, Battery stats, and more
+  <br>
+  <a href="https://github.com/alexkainzinger/resource-watchdog/issues/new">Report bug</a>
+  ·
+  <a href="https://github.com/alexkainzinger/resource-watchdog/issues/new">Request feature</a>
+  ·
+  <a href="https://github.com/alexkainzinger/resource-watchdog/blob/main/CHANGELOG.md">Changelog</a>
+</p>
+</div>
 
 This project was highly inspired by [resmon](https://github.com/Njanderson/resmon), using its main concept for watching of resource usage.
 
@@ -7,6 +23,8 @@ Resource monitoring is entirely done using [systeminformation](https://github.co
 ## Features
 
 Shows stats of certain resources of the system in the VSCode statusbar.
+
+![Example](images/example.png)
 
 Currently supported features:
 - Battery Percentage (if available)
