@@ -1,6 +1,6 @@
 import { fsSize, Systeminformation } from "systeminformation";
 import { WorkspaceConfiguration } from "vscode";
-import { DiskSpaceFormat, Units } from "../constants";
+import { DiskSpaceFormat } from "../constants";
 import { AbstractResource } from "./abstract-resource";
 
 export class Disk extends AbstractResource {
@@ -47,14 +47,6 @@ export class Disk extends AbstractResource {
         const total = this._convertBytesToLargestUnit(fsSize.size);
         return `${fsSize.fs} ${used}/${total} used`;
     }
-  }
-
-  private _convertBytesToLargestUnit(bytes: number): string {
-    let unit = Units.None;
-    while (bytes / unit >= 1024 && unit < Units.G) {
-      unit *= 1024;
-    }
-    return this.formatNumber(bytes / unit);
   }
 
   private _getDrives() {

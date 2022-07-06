@@ -13,6 +13,8 @@ import {
   CpuUsage,
   Disk,
   Memory,
+  NetworkIn,
+  NetworkOut,
 } from "./monitors";
 
 export default class ResourceWatchdog {
@@ -34,6 +36,8 @@ export default class ResourceWatchdog {
     this._resources.push(new CpuTemperature(this._config));
     this._resources.push(new Disk(this._config));
     this._resources.push(new Memory(this._config));
+    this._resources.push(new NetworkIn(this._config));
+    this._resources.push(new NetworkOut(this._config));
   }
 
   public startUpdating() {

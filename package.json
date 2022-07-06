@@ -38,7 +38,7 @@
                 "resourceWatchdog.cpuFrequency.show": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Toggles the display of CPU frequency. For Windows, this displays the maximum clock speed."
+                    "description": "Toggles the display of CPU frequency. For Windows & M1 Macs, this displays the maximum clock speed."
                 },
                 "resourceWatchdog.cpuFrequency.unit": {
                     "type": "string",
@@ -113,6 +113,16 @@
                     "default": "0.9",
                     "minimum": 0,
                     "maximum": 1
+                },
+                "resourceWatchdog.networkIn.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of received bytes per second across all network interfaces. The value will be converted to KB, MB or GB depending on the amount of bytes."
+                },
+                "resourceWatchdog.networkOut.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of transferred bytes per second across all network interfaces. The value will be converted to KB, MB or GB depending on the amount of bytes."
                 },
                 "resourceWatchdog.color": {
                     "type": "string",

@@ -1,4 +1,5 @@
 import { WorkspaceConfiguration } from "vscode";
+import { Units } from "../constants";
 
 export abstract class AbstractResource {
   constructor(
@@ -28,6 +29,24 @@ export abstract class AbstractResource {
     return Promise.resolve(
       this.config.get<boolean>(`${this.configKey}.show`, this.isShownByDefault)
     );
+  }
+
+  protected _convertBytesToLargestUnit(
+    bytes: number,
+    withUnit = false
+  ): string {
+    let unit = Units.None;
+    while (bytes / unit >= 1024 && unit < Units.G) {
+      unit *= 1024;
+    }
+
+    const formattedValue = this.formatNumber(bytes / unit);
+    if (!withUnit) {
+      return formattedValue;
+    }
+
+    const unitName = Units[unit] === "None" ? "" : Units[unit];
+    return `${formattedValue} ${unitName}B`;
   }
 
   protected formatNumber(number: number) {
