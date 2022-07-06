@@ -147,6 +147,11 @@
                     "maximum": 1,
                     "description": "Configures a threshold value on which a warning indicator will be shown."
                 },
+                "resourceWatchdog.uptime.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of uptime"
+                },
                 "resourceWatchdog.color": {
                     "type": "string",
                     "default": "#FFFFFF",

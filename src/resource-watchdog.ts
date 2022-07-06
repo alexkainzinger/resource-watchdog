@@ -16,6 +16,7 @@ import {
   NetworkIn,
   NetworkOut,
   Swap,
+  Uptime,
 } from "./monitors";
 
 export default class ResourceWatchdog {
@@ -40,6 +41,7 @@ export default class ResourceWatchdog {
     this._resources.push(new NetworkIn(this._config));
     this._resources.push(new NetworkOut(this._config));
     this._resources.push(new Swap(this._config));
+    this._resources.push(new Uptime(this._config));
   }
 
   public startUpdating() {
