@@ -112,7 +112,8 @@
                     "type": "number",
                     "default": "0.9",
                     "minimum": 0,
-                    "maximum": 1
+                    "maximum": 1,
+                    "description": "Configures a threshold value on which a warning indicator will be shown."
                 },
                 "resourceWatchdog.networkIn.show": {
                     "type": "boolean",
@@ -123,6 +124,28 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Toggles the display of transferred bytes per second across all network interfaces. The value will be converted to KB, MB or GB depending on the amount of bytes."
+                },
+                "resourceWatchdog.swap.show": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Toggles the display of swap consumption."
+                },
+                "resourceWatchdog.swap.unit": {
+                    "type": "string",
+                    "enum": [
+                        "GB",
+                        "MB",
+                        "KB",
+                        "B"
+                    ],
+                    "default": "GB"
+                },
+                "resourceWatchdog.swap.dangerThreshold": {
+                    "type": "number",
+                    "default": "0.9",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Configures a threshold value on which a warning indicator will be shown."
                 },
                 "resourceWatchdog.color": {
                     "type": "string",

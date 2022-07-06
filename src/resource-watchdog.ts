@@ -15,6 +15,7 @@ import {
   Memory,
   NetworkIn,
   NetworkOut,
+  Swap,
 } from "./monitors";
 
 export default class ResourceWatchdog {
@@ -38,6 +39,7 @@ export default class ResourceWatchdog {
     this._resources.push(new Memory(this._config));
     this._resources.push(new NetworkIn(this._config));
     this._resources.push(new NetworkOut(this._config));
+    this._resources.push(new Swap(this._config));
   }
 
   public startUpdating() {

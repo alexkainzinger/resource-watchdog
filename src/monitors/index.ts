@@ -7,3 +7,4 @@ export * from "./disk";
 export * from "./memory";
 export * from "./network-in";
 export * from "./network-out";
+export * from "./swap";
