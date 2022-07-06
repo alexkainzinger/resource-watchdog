@@ -26,11 +26,7 @@ export default class ResourceWatchdog {
   private _resources: AbstractResource[] = [];
 
   constructor() {
-    this._statusBarItem = window.createStatusBarItem(
-      this._getStatusBarAlignment()
-    );
-    this._statusBarItem.color = this._getStatusBarColor();
-    this._statusBarItem.show();
+    this._statusBarItem = this._createStatusBar();
 
     this._resources.push(new Battery(this._config));
     this._resources.push(new CpuFrequency(this._config));
@@ -60,9 +56,12 @@ export default class ResourceWatchdog {
 
   public onConfigChange() {
     this._config = workspace.getConfiguration(CONFIGURATION_KEY);
+    
     for (const resource of this._resources) {
       resource.updateConfig(this._config);
     }
+    this._statusBarItem.dispose();
+    this._statusBarItem = this._createStatusBar();
   }
 
   private async _update() {
@@ -91,6 +90,15 @@ export default class ResourceWatchdog {
         )
       );
     }
+  }
+
+  private _createStatusBar() {
+    const statusBarItem = window.createStatusBarItem(
+      this._getStatusBarAlignment()
+    );
+    statusBarItem.color = this._getStatusBarColor();
+    statusBarItem.show();
+    return statusBarItem;
   }
 
   private _getStatusBarAlignment() {
