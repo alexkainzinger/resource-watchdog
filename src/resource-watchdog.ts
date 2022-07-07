@@ -1,7 +1,6 @@
 import { StatusBarAlignment, StatusBarItem, window, workspace } from "vscode";
 import {
   CONFIGURATION_KEY,
-  DEFAULT_COLOR,
   DEFAULT_UPDATE_FREQUENCY_MS,
   HEX_COLOR_REGEX,
 } from "./constants";
@@ -56,7 +55,7 @@ export default class ResourceWatchdog {
 
   public onConfigChange() {
     this._config = workspace.getConfiguration(CONFIGURATION_KEY);
-    
+
     for (const resource of this._resources) {
       resource.updateConfig(this._config);
     }
@@ -96,7 +95,12 @@ export default class ResourceWatchdog {
     const statusBarItem = window.createStatusBarItem(
       this._getStatusBarAlignment()
     );
-    statusBarItem.color = this._getStatusBarColor();
+
+    const color = this._getStatusBarColor();
+    if (color) {
+      statusBarItem.color = color;
+    }
+
     statusBarItem.show();
     return statusBarItem;
   }
@@ -108,10 +112,10 @@ export default class ResourceWatchdog {
   }
 
   private _getStatusBarColor() {
-    const configColor = this._config.get<string>("color", DEFAULT_COLOR);
-    if (!HEX_COLOR_REGEX.test(configColor)) {
-      return DEFAULT_COLOR;
+    const colorOverride = this._config.get<string>("colorOverride");
+    if (!colorOverride || !HEX_COLOR_REGEX.test(colorOverride)) {
+      return undefined;
     }
-    return configColor;
+    return colorOverride;
   }
 }

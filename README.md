@@ -67,7 +67,7 @@ This extension contributes the following settings:
 * `resourceWatchdog.swap.unit`: Unit of swap usage. Options are: `GB`, `MB`, `KB` or `B`.
 * `resourceWatchdog.swap.dangerThreshold`: Threshold for swap usage. If swap usage is above this threshold, the extension will add a warning icon after the value.
 * `resourceWatchdog.uptime.show`: Shows uptime.
-* `resourceWatchdog.color`: Color of the status bar text (hex code).
+* `resourceWatchdog.colorOverride`: Color override of the status bar text (hex code). If empty (default), the extension will use the theme color.
 * `resourceWatchdog.leftAlignment`: If true, the status bar text will be left aligned, otherwise it will be right aligned.
 * `resourceWatchdog.precision`: Number of decimal places to show. Options is: 0 ≤ precision ≤ 4.
 * `resourceWatchdog.updateFrequencyMs`: Update frequency in milliseconds. You might want to increase this if you see a lot of CPU usage to reduce update interval.

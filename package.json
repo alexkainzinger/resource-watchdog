@@ -158,10 +158,10 @@
                     "default": false,
                     "description": "Toggles the display of uptime"
                 },
-                "resourceWatchdog.color": {
+                "resourceWatchdog.colorOverride": {
                     "type": "string",
-                    "default": "#FFFFFF",
-                    "description": "Color of the status bar text in hex code (for example, #FFFFFF is white). The color must be in the format #RRGGBB, using hex digits."
+                    "default": "",
+                    "description": "Color override of the status bar text. If empty (default), the extension will use the theme color. The color must be in the format #RRGGBB, using hex digits."
                 },
                 "resourceWatchdog.leftAlignment": {
                     "type": "boolean",

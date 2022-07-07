@@ -1,6 +1,5 @@
 export const CONFIGURATION_KEY = "resourceWatchdog";
 export const DEFAULT_UPDATE_FREQUENCY_MS = 2000;
-export const DEFAULT_COLOR = "#FFFFFF";
 export const HEX_COLOR_REGEX = /^#[0-9A-F]{6}$/i;
 
 export type FrequencyUnit = "GHz" | "MHz" | "KHz" | "Hz";
