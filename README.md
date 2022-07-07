@@ -81,6 +81,10 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
+## [1.1.0]
+- Renamed `resourceWatchdog.color` to `resourceWatchdog.colorOverride` to better support light themes ([#1](https://github.com/alexkainzinger/resource-watchdog/issues/1))
+- Improve galleryBanner color for VSCode Marketplace
+
 ## [1.0.0] - Initial Version 🎉
 
 - Support for:
