@@ -8,8 +8,7 @@ export class Uptime extends AbstractResource {
   }
 
   protected async getDisplay(): Promise<string> {
-    const t = time();
-    const uptime = Number(t.uptime);
+    const { uptime } = time();
     return `$(clock) ${this.formatTime(uptime)}`;
   }
 
@@ -23,7 +22,7 @@ export class Uptime extends AbstractResource {
     const hhmm = `${hh}h ${mm}m`;
 
     if (days < 1) {
-        return hhmm;
+      return hhmm;
     }
     return `${days}d ${hhmm}`;
   }
