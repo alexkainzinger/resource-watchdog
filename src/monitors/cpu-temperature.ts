@@ -8,14 +8,18 @@ export class CpuTemperature extends AbstractResource {
     super(config, false, "cpuTemperature");
   }
 
-  protected async isShown(): Promise<boolean> {
+  protected async isShown() {
+    if (!(await super.isShown())) {
+      return false;
+    }
+
     // temperature reporting has some issues on M1
-    const temp = await cpuTemperature();
-    const hasCpuTemp = typeof temp.main === "number" && temp.main > 0;
-    return Promise.resolve(hasCpuTemp && super.isShown());
+    const { main } = await cpuTemperature();
+    const hasCpuTemp = typeof main === "number" && main > 0;
+    return Promise.resolve(hasCpuTemp);
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const unit = this.config.get<TemperatureUnit>(
       `${this.configKey}.unit`,
       "C"
@@ -32,7 +36,7 @@ export class CpuTemperature extends AbstractResource {
     return `$(thermometer) ${this.formatNumber(tempValue)} ${tempUnit}`;
   }
 
-  private _celsiusToFahrenheit(temperature: number): number {
+  private _celsiusToFahrenheit(temperature: number) {
     return (temperature * 9) / 5 + 32;
   }
 }

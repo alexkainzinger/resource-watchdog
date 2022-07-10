@@ -7,12 +7,12 @@ export class Uptime extends AbstractResource {
     super(config, false, "uptime");
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const { uptime } = time();
     return `$(clock) ${this.formatTime(uptime)}`;
   }
 
-  private formatTime(sec: number): string {
+  private formatTime(sec: number) {
     const days = Math.floor(sec / (60 * 60 * 24));
     const hours = Math.floor(sec / (60 * 60)) % 24;
     const minutes = Math.floor(sec / 60) % 60;

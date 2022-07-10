@@ -7,7 +7,7 @@ export class NetworkIn extends AbstractResource {
     super(config, false, "networkIn");
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const networkData = await networkStats();
     const totalRxSec = networkData.reduce(
       (acc, iface) => acc + (iface.rx_sec || 0),

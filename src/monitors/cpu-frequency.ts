@@ -8,13 +8,13 @@ export class CpuFrequency extends AbstractResource {
     super(config, true, "cpuFrequency");
   }
 
-  protected async getDisplay(): Promise<string> {
-    const freq = await cpuCurrentSpeed();
-    const speedHz = freq.avg * Units.G;
+  protected async getDisplay() {
+    const { avg } = await cpuCurrentSpeed();
+    const speedHz = avg * Units.G;
     return `$(dashboard) ${this._getDisplayWithFormat(speedHz)}`;
   }
 
-  private _getDisplayWithFormat(speedHz: number): string {
+  private _getDisplayWithFormat(speedHz: number) {
     const unit = this.config.get<FrequencyUnit>(
       `${this.configKey}.unit`,
       "GHz"

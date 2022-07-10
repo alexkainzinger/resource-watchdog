@@ -11,14 +11,15 @@ export abstract class AbstractResource {
 
   protected abstract getDisplay(): Promise<string>;
 
-  public async getResourceDisplay(): Promise<string | undefined> {
-    if (await this.isShown()) {
-      const display = await this.getDisplay();
-      this.maxWidth = Math.max(this.maxWidth, display.length);
-
-      return display.padEnd(this.maxWidth, " ");
+  public async getResourceDisplay() {
+    if (!(await this.isShown())) {
+      return undefined;
     }
-    return undefined;
+
+    const display = await this.getDisplay();
+    this.maxWidth = Math.max(this.maxWidth, display.length);
+
+    return display.padEnd(this.maxWidth, " ");
   }
 
   public updateConfig(config: WorkspaceConfiguration) {
@@ -31,10 +32,7 @@ export abstract class AbstractResource {
     );
   }
 
-  protected _convertBytesToLargestUnit(
-    bytes: number,
-    withUnit = false
-  ): string {
+  protected _convertBytesToLargestUnit(bytes: number, withUnit = false) {
     let unit = Units.None;
     while (bytes / unit >= 1024 && unit < Units.G) {
       unit *= 1024;

@@ -7,14 +7,18 @@ export class Battery extends AbstractResource {
     super(config, true, "battery");
   }
 
-  protected async isShown(): Promise<boolean> {
-    const hasBattery = (await battery()).hasBattery;
-    return Promise.resolve(hasBattery && super.isShown());
+  protected async isShown() {
+    if (!(await super.isShown())) {
+      return false;
+    }
+
+    const { hasBattery } = await battery();
+    return Promise.resolve(hasBattery);
   }
 
-  protected async getDisplay(): Promise<string> {
-    const rawBattery = await battery();
-    const percentRemaining = Math.min(Math.max(rawBattery.percent, 0), 100);
+  protected async getDisplay() {
+    const { percent } = await battery();
+    const percentRemaining = Math.min(Math.max(percent, 0), 100);
     return `$(plug) ${percentRemaining}%`;
   }
 }

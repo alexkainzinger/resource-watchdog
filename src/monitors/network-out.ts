@@ -7,7 +7,7 @@ export class NetworkOut extends AbstractResource {
     super(config, false, "networkOut");
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const networkData = await networkStats();
     const totalTxSec = networkData.reduce(
       (acc, iface) => acc + (iface.tx_sec || 0),

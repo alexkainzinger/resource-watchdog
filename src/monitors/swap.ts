@@ -8,17 +8,17 @@ export class Swap extends AbstractResource {
     super(config, false, "swap");
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const unit = this.config.get<MemoryUnit>(`${this.configKey}.unit`, "GB");
     const swapDangerThreshold = this.config.get<number>(
       `${this.configKey}.dangerThreshold`,
       0.9
     );
 
-    const memoryData = await mem();
+    const { swapused, swaptotal } = await mem();
     const swapDivisor = MEMORY_MAPPINGS[unit];
-    const swapUsed = memoryData.swapused / swapDivisor;
-    const swapTotal = memoryData.swaptotal / swapDivisor;
+    const swapUsed = swapused / swapDivisor;
+    const swapTotal = swaptotal / swapDivisor;
     const swapUsedPercentage = swapUsed / swapTotal;
     const isDanger = swapUsedPercentage > swapDangerThreshold;
 

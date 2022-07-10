@@ -8,12 +8,16 @@ export class Disk extends AbstractResource {
     super(config, false, "disk");
   }
 
-  protected async isShown(): Promise<boolean> {
+  protected async isShown() {
+    if (!(await super.isShown())) {
+      return false;
+    }
+
     const hasDefinedDrives = this._getDrives().length > 0;
-    return Promise.resolve(hasDefinedDrives && super.isShown());
+    return Promise.resolve(hasDefinedDrives);
   }
 
-  protected async getDisplay(): Promise<string> {
+  protected async getDisplay() {
     const fsSizes = await fsSize();
     const drives = this._getDrives();
     const formattedDrives = fsSizes
