@@ -3,8 +3,10 @@ import { WorkspaceConfiguration } from "vscode";
 import { AbstractResource } from "./abstract-resource";
 
 export class Battery extends AbstractResource {
+  private hasBattery: boolean | undefined;
+
   constructor(config: WorkspaceConfiguration) {
-    super(config, true, "battery");
+    super(config, false, "battery");
   }
 
   protected async isShown() {
@@ -12,8 +14,14 @@ export class Battery extends AbstractResource {
       return false;
     }
 
-    const { hasBattery } = await battery();
-    return Promise.resolve(hasBattery);
+    // cache the result of the first call to systeminformation.battery() as it seems to be expensive on CPU
+    // https://github.com/alexkainzinger/resource-watchdog/issues/2
+    if (this.hasBattery === undefined) {
+      const { hasBattery } = await battery();
+      this.hasBattery = hasBattery;
+    }
+
+    return Promise.resolve(this.hasBattery);
   }
 
   protected async getDisplay() {

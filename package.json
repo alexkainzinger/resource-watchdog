@@ -38,7 +38,7 @@
             "properties": {
                 "resourceWatchdog.battery.show": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Toggles the display of battery percentage remaining if a device with a battery. If the device reports not having a battery, this setting will always be treated as false."
                 },
                 "resourceWatchdog.cpuFrequency.show": {
