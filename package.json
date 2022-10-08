@@ -2,7 +2,7 @@
     "name": "resource-watchdog",
     "displayName": "Resource Watchdog",
     "description": "Displays current CPU stats, Memory, Battery stats, and more",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "publisher": "alexkainzinger",
     "author": {
         "name": "Alexander Kainzinger",
