@@ -1,6 +1,6 @@
 import { mem } from "systeminformation";
 import { WorkspaceConfiguration } from "vscode";
-import { MemoryUnit, MEMORY_MAPPINGS, Units } from "../constants";
+import { MemoryUnit, MEMORY_MAPPINGS } from "../constants";
 import { AbstractResource } from "./abstract-resource";
 
 export class Memory extends AbstractResource {
