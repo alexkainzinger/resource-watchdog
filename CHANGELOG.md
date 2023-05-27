@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0]
+- TypeScript 5.0 upgrade
+- Bump dependencies
+
 ## [1.2.0]
 - Disables "Show battery" by default
-- Improve performance of battery status updates if "Show battery" is enabled by caching if battery is available (#2) 
+- Improve performance of battery status updates if "Show battery" is enabled by caching if battery is available ([#2](https://github.com/alexkainzinger/resource-watchdog/issues/2))
 - Bump dependencies
 
 ## [1.1.1]

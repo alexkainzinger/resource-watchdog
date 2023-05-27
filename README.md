@@ -81,9 +81,13 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
+## [1.3.0]
+- TypeScript 5.0 upgrade
+- Bump dependencies
+
 ## [1.2.0]
 - Disables "Show battery" by default
-- Improve performance of battery status updates if "Show battery" is enabled by caching if battery is available (#2) 
+- Improve performance of battery status updates if "Show battery" is enabled by caching if battery is available ([#2](https://github.com/alexkainzinger/resource-watchdog/issues/2))
 - Bump dependencies
 
 ## [1.1.1]
