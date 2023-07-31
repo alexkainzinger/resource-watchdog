@@ -81,6 +81,9 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
+## [1.3.1]
+- Bump dependencies
+
 ## [1.3.0]
 - TypeScript 5.0 upgrade
 - Bump dependencies
