@@ -81,6 +81,8 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
+## [1.3.2]
+
 ## [1.3.1]
 - Bump dependencies
 
