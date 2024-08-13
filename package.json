@@ -17,7 +17,7 @@
         "url": "https://github.com/alexkainzinger/resource-watchdog/issues"
     },
     "engines": {
-        "vscode": "^1.75.0"
+        "vscode": "^1.92.0"
     },
     "categories": [
         "Other"
@@ -189,23 +189,23 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "pretest": "yarn run compile && yarn run lint",
-        "lint": "eslint src --ext ts",
+        "lint": "eslint .",
         "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
         "@types/glob": "^8.1.0",
-        "@types/mocha": "^10.0.1",
-        "@types/node": "16.x",
-        "@types/vscode": "1.75.1",
-        "@typescript-eslint/eslint-plugin": "^5.59.7",
-        "@typescript-eslint/parser": "^5.59.7",
-        "@vscode/test-electron": "^2.3.2",
-        "eslint": "^8.41.0",
-        "glob": "^10.2.6",
-        "mocha": "^10.2.0",
-        "typescript": "^5.0.4"
+        "@types/mocha": "^10.0.7",
+        "@types/node": "22.2.0",
+        "@types/vscode": "1.92.0",
+        "@typescript-eslint/eslint-plugin": "^8.1.0",
+        "@typescript-eslint/parser": "^8.1.0",
+        "@vscode/test-electron": "^2.4.1",
+        "eslint": "^9.9.0",
+        "glob": "^11.0.0",
+        "mocha": "^10.7.3",
+        "typescript": "^5.5.4"
     },
     "dependencies": {
-        "systeminformation": "^5.21.7"
+        "systeminformation": "^5.23.4"
     }
 }
