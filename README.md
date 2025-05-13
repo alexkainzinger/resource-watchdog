@@ -30,7 +30,7 @@ Currently supported features:
 - Battery Percentage (if available)
 - CPU Frequency
   - Windows: will report the maximum CPU frequency.
-  - M1 Mac: will report the maximum CPU frequency.
+  - Mac: will report the maximum CPU frequency.
 - CPU Temperature (with certain limits)
   - Windows: some CPUs might not be supported properly. Also, it might not work if not run with admin privileges. See [Known Issue of systeminformation](https://github.com/sebhildebrandt/systeminformation#windows-temperature-battery-)
   - Mac: does not work on Mac. See [Known Issue of systeminformation](https://github.com/sebhildebrandt/systeminformation#macos---temperature-sensor)
@@ -50,7 +50,7 @@ Currently supported features:
 This extension contributes the following settings:
 
 * `resourceWatchdog.battery.show`: Shows CPU usage
-* `resourceWatchdog.cpuFrequency.show`: Shows current CPU frequency. On Windows & M1 Mac, it will show the maximum CPU frequency.
+* `resourceWatchdog.cpuFrequency.show`: Shows current CPU frequency. On Windows & Mac, it will show the maximum CPU frequency.
 * `resourceWatchdog.cpuFrequency.unit`: Unit of CPU frequency. Options are: `GHz`, `MHz`, `KHz` or `Hz`.
 * `resourceWatchdog.cpuTemperature.show`: Shows current CPU temperature. Check known issues for more information.
 * `resourceWatchdog.cpuTemperature.unit`: Unit of CPU temperature. Options are: `C` or `F`.

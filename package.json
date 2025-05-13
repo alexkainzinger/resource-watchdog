@@ -44,7 +44,7 @@
                 "resourceWatchdog.cpuFrequency.show": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Toggles the display of CPU frequency. For Windows & M1 Macs, this displays the maximum clock speed."
+                    "description": "Toggles the display of CPU frequency. For Windows & Mac, this displays the maximum clock speed."
                 },
                 "resourceWatchdog.cpuFrequency.unit": {
                     "type": "string",
@@ -59,7 +59,7 @@
                 "resourceWatchdog.cpuTemperature.show": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Toggles the display of CPU temperature. May not work without the lm-sensors module on Linux. May require running VS Code as admin on Windows. M1 Macs also report no temperature."
+                    "description": "Toggles the display of CPU temperature. May not work without the lm-sensors module on Linux. May require running VS Code as admin on Windows. Macs also report no temperature."
                 },
                 "resourceWatchdog.cpuTemperature.unit": {
                     "type": "string",

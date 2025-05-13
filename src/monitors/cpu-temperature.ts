@@ -13,7 +13,7 @@ export class CpuTemperature extends AbstractResource {
       return false;
     }
 
-    // temperature reporting has some issues on M1
+    // temperature reporting has some issues on Mac
     const { main } = await cpuTemperature();
     const hasCpuTemp = typeof main === "number" && main > 0;
     return Promise.resolve(hasCpuTemp);
