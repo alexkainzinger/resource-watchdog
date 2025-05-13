@@ -81,6 +81,10 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
+## [1.5.0]
+- Improves documentation by changing "M1 Mac" references to just "Mac"
+- Bump dependencies
+
 ## [1.4.0]
 - Bump dependencies
 
