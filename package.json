@@ -17,7 +17,7 @@
         "url": "https://github.com/alexkainzinger/resource-watchdog/issues"
     },
     "engines": {
-        "vscode": "^1.100.0"
+        "vscode": "^1.106.0"
     },
     "categories": [
         "Other"
@@ -193,15 +193,15 @@
         "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/glob": "^8.1.0",
+        "@types/glob": "^9.0.0",
         "@types/mocha": "^10.0.7",
-        "@types/node": "22.15.17",
-        "@types/vscode": "1.100.0",
+        "@types/node": "24.10.1",
+        "@types/vscode": "1.106.1",
         "@typescript-eslint/eslint-plugin": "^8.1.0",
         "@typescript-eslint/parser": "^8.1.0",
         "@vscode/test-electron": "^2.4.1",
         "eslint": "^9.9.0",
-        "glob": "^11.1.0",
+        "glob": "^13.0.0",
         "mocha": "^11.2.2",
         "typescript": "^5.5.4"
     },
