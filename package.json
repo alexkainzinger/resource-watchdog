@@ -17,7 +17,7 @@
         "url": "https://github.com/alexkainzinger/resource-watchdog/issues"
     },
     "engines": {
-        "vscode": "^1.106.0"
+        "vscode": "^1.118.0"
     },
     "categories": [
         "Other"
