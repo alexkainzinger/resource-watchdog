@@ -81,53 +81,7 @@ For a complete list of known issues, see the [Known Issues of systeminformation]
 
 ## Release Notes
 
-## [1.6.0]
-- Bump dependencies
-
-## [1.5.0]
-- Improves documentation by changing "M1 Mac" references to just "Mac"
-- Bump dependencies
-
-## [1.4.0]
-- Bump dependencies
-
-## [1.3.3]
-- Bump dependencies
-
-## [1.3.2]
-
-## [1.3.1]
-- Bump dependencies
-
-## [1.3.0]
-- TypeScript 5.0 upgrade
-- Bump dependencies
-
-## [1.2.0]
-- Disables "Show battery" by default
-- Improve performance of battery status updates if "Show battery" is enabled by caching if battery is available ([#2](https://github.com/alexkainzinger/resource-watchdog/issues/2))
-- Bump dependencies
-
-## [1.1.1]
-- Slight performance improvements by checking if certain stats are enabled before deciding if it can be shown (by requesting it from the system), e.g. Battery, CPU Temperature & Disk
-- Bump dependencies, notable: `systeminformation` to resolve typing issue
-
-## [1.1.0]
-- Renamed `resourceWatchdog.color` to `resourceWatchdog.colorOverride` to better support light themes ([#1](https://github.com/alexkainzinger/resource-watchdog/issues/1))
-- Improve galleryBanner color for VSCode Marketplace
-
-## [1.0.0] - Initial Version 🎉
-
-- Support for:
-  - Battery Percentage
-  - CPU Frequency (with certain limits)
-  - CPU Temperature (with certain limits)
-  - CPU Usage
-  - Disk Stats
-  - Memory Usage
-  - Network Stats (received and transferred byte/seconds)
-  - Swap Usage
-  - Uptime
+See [CHANGELOG](CHANGELOG.md) for details of each release.
 
 ## Credits
 
@@ -146,7 +100,7 @@ Nick Anderson [Njanderson](https://github.com/Njanderson)
 
 >[`MIT`][license-url] License (MIT)
 >
->Copyright &copy; 2022 Alexander Kainzinger
+>Copyright &copy; 2026 Alexander Kainzinger
 >
 >Permission is hereby granted, free of charge, to any person obtaining a copy
 >of this software and associated documentation files (the "Software"), to deal
