@@ -1207,10 +1207,10 @@ supports-color@^8.1.1:
   dependencies:
     has-flag "^4.0.0"
 
-systeminformation@^5.31.5:
-  version "5.31.6"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.31.6.tgz#2da4979a7262974fd068a3a306ded30aed6127c0"
-  integrity sha512-Uv2b2uGGM6ns+26czgW2cYRabYdnswM0ddSOOlryHOaelzsmDSet1iM/NT7VOYxW8x/BW+HkY+b1Ve2pLTSGSA==
+systeminformation@^5.31.7:
+  version "5.31.7"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.31.7.tgz#32009a8790af048299ea46d01e9f306adc1abb45"
+  integrity sha512-/8NC53e5nP9nmhn42/ncdOkyJnOoue/Vy+tJOyUGd1Yv66G069wK4rrziwhrqDETgk78CudTQupw5z19S5uoZw==
 
 tinyglobby@^0.2.15:
   version "0.2.16"
